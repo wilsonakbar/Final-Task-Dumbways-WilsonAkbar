@@ -37,7 +37,7 @@ cat id_rsa.pub
 sudo nano ./.ssh/authorized_keys
 ```
 ### Server Configuration using Ansible
-buat direktori ansible kemudian buat file
+buat direktori ansible kemudian buat file  
 Inventory  
 ![Screenshot_8](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/035ecfa0-4bf1-4e8a-9d83-a148444d826c)
 ```
@@ -51,7 +51,7 @@ Inventory
 ansible_user="wilson"
 ansible_pythone_interpreter=/usr/bin/python3
 ```
-ansible.cfg
+ansible.cfg  
 ![Screenshot_9](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/3c08aac3-e49d-472d-b8ea-f4cf615d9553)
 ```
 [defaults]
