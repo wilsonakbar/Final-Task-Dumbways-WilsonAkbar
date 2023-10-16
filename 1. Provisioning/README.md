@@ -38,7 +38,7 @@ sudo nano ./.ssh/authorized_keys
 ```
 ### Server Configuration using Ansible
 buat direktori ansible kemudian buat file
-Inventory
+Inventory  
 ![Screenshot_8](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/035ecfa0-4bf1-4e8a-9d83-a148444d826c)
 ```
 [appserver]
