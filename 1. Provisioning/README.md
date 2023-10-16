@@ -1,4 +1,4 @@
-![Screenshot_13](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7d16c247-3561-4c47-a424-4f9527e12aba)# Provisioning
+# Provisioning
 ## Local
 ### buat server lokal multipass pada windows
 ![Screenshot_1](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/8fc3c2a1-20a3-4400-916d-797af13c1b4a)
