@@ -58,7 +58,9 @@ git branch Staging
 ```
 git push --all origin
 ```
+[fe-dumbmerch](https://github.com/wilsonakbar/fe-dumbmerch)
 ![Screenshot_5](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/dbf8da4b-33c9-4523-9079-0910423a7943)
+[be-dumbmerch](https://github.com/wilsonakbar/be-dumbmerch)
 ![Screenshot_6](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/a59acdf1-9679-4285-9f57-597c77e615c0)
 ### Each Branch have own CI/CD
 buat ci/cd dengan pilihan action pada github
