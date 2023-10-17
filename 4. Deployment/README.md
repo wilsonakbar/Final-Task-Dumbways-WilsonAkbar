@@ -31,3 +31,61 @@ sudo nano .dockerignore
 ```
 docker build -t wilson/be-dumbmerch-staging:latest .
 ```
+![Screenshot_8](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/eb941996-cc1a-4c74-95f4-58d4cfd8fe71)
+![Screenshot_9](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/8569bc78-0b56-4872-aed5-fbaa07315d43)
+jangan lupa untuk upload direktori yang sudah kita ubah push ke github
+![Screenshot_10](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/fe872e95-5af9-4dd6-99bf-401705653005)
+![Screenshot_11](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/035bc67c-981f-4558-bd34-bba7f2c84cec)
+### Production: Deploy a production ready app
+![Screenshot_12](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d8739a8f-18e2-4824-bf46-a5a4e778e46d)
+```
+git checkout Production
+```
+```
+git branch
+```
+```
+sudo nano Dockerfile
+```
+![Screenshot_14](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/00f9ccff-aec5-4133-b11f-814bac46d24d)
+```
+FROM node:16-alpine
+WORKDIR /app
+COPY . .
+RUN npm install
+EXPOSE 3000
+CMD ["npx","serve","build","-l","3000"]
+```
+![Screenshot_16](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/2a587a0d-8a86-4a6e-966f-f11003b1bcbe)
+```
+docker build -t wilsonakbar/fe-dumbmerch-production:latest .
+```
+![Screenshot_13](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/70b0b975-1b1b-4b11-9ae6-3bc800ee0b72)
+```
+git checkout Production
+```
+```
+git branch
+```
+```
+sudo nano Dockerfile
+```
+![Screenshot_15](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/e49bd2cd-2ffe-4ac2-b37b-8f00a79fa63b)
+```
+#distroless
+FROM golang:1.18 as build
+
+WORKDIR /go/src/app
+COPY . .
+
+RUN go mod download
+RUN CGO_ENABLED=0 go build -o /go/bin/app
+
+FROM gcr.io/distroless/static-debian11
+COPY --from=build /go/bin/app /
+CMD ["/app"]
+```
+![Screenshot_17](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/071fed80-2508-43eb-9ae4-f7e6f0859def)
+```
+docker build -t wilsonakbar/be-dumbmerch-production:latest .
+```
