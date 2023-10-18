@@ -191,5 +191,9 @@ test:
 kemudian commite changes
 ![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/3faa1417-f574-4968-9b3d-6af14a9776a8)
 kemudian jika hijau seperti ini pipelines berhasil
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/8f075eee-8f30-4e6a-bafb-26d64015a081)
+Repository pull berhasil di jalankan
 ![Screenshot_31](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/a2f50f78-dd3f-4b83-99ec-7d5dec3c444f)
-images berhasil di push
+images berhasil di build dan push ke dockerhub
+![Screenshot_32](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f185e875-f444-4764-8f8f-912407cd92ba)
+aplikasi berhasil dijalankan
