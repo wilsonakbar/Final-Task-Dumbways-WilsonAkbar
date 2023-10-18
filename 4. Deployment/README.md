@@ -47,14 +47,15 @@ git branch
 ```
 sudo nano Dockerfile
 ```
-![Screenshot_14](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/00f9ccff-aec5-4133-b11f-814bac46d24d)
+![Screenshot_14](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/b004c9cf-2860-420a-a0cb-19b989052547)
 ```
-FROM node:16-alpine
+FROM node:16
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN npm install -g serve
+RUN npm run build
 EXPOSE 3000
-CMD ["npx","serve","build","-l","3000"]
+CMD ["serve", "-s", "build"]
 ```
 ![Screenshot_16](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/2a587a0d-8a86-4a6e-966f-f11003b1bcbe)
 ```
