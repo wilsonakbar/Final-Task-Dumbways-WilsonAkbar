@@ -1,7 +1,7 @@
 # Web Server
 ## Local
 ### Create domains
-buat domain pada https://dash.cloudflare.com/
+buat domain pada https://dash.cloudflare.com/  
 ![Screenshot_1](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f2d843d7-0f3b-4d1a-825a-28c574b76b69)
 nodegate.wilson.studentdumbways.my.id
 nodeapp.wilson.studentdumbways.my.id
@@ -9,7 +9,7 @@ api.wilson.studentdumbways.my.id
 dash.wilson.studentdumbways.my.id
 prom.wilson.studentdumbways.my.id
 wilson.studentdumbways.my.id
-dengan ip gateway kita 103.127.97.70
+dengan ip gateway kita 103.127.97.70  
 ![Screenshot_2](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/73c31d24-b379-4b65-ad6c-5523096d33c5)
 kemudian buat proxy.conf pada direktori ansible untuk mengatur domain, lalu jalankan kembali nginx menggunakan ansible
 ```
