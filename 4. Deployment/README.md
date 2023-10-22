@@ -98,15 +98,17 @@ git branch
 ```
 sudo nano Dockerfile
 ```
-![Screenshot_14](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/b004c9cf-2860-420a-a0cb-19b989052547)
+![Screenshot_35](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/2fbfa167-770c-4866-8fe4-4e604a207aa0)
 ```
 FROM node:16
 WORKDIR /app
+COPY package*.json ./
+RUN npm install
 COPY . .
-RUN npm install -g serve
 RUN npm run build
+RUN npm install -g serve
 EXPOSE 3000
-CMD ["serve", "-s", "build"]
+CMD ["serve", "-s", "-l", "3000", "build"]
 ```
 ![Screenshot_16](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/2a587a0d-8a86-4a6e-966f-f11003b1bcbe)
 ```
