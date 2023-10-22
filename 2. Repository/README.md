@@ -76,6 +76,6 @@ lakukan hal yang sama pada setiap branch Staging dan Production untuk file fe-du
 [be-dumbmerch](https://github.com/wilsonakbar/be-dumbmerch)
 ![Screenshot_6](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/a59acdf1-9679-4285-9f57-597c77e615c0)
 ### Each Branch have own CI/CD
-CI/CD saya menggunakan gitlab dan akan saya jelaskan pada [Deployment](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/blob/47416b714f87baa32c8777112c30e9594f6221b0/3.%20Server%20Management/README.md)
+CI/CD saya menggunakan gitlab dan akan saya jelaskan pada [Deployment](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/blob/47416b714f87baa32c8777112c30e9594f6221b0/4.%20Deployment/README.md#deployment)
 
 
