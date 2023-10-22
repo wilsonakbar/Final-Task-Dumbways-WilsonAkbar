@@ -191,11 +191,11 @@ test:
     - ssh $SSH_USER@$VM_ADDRESS "cd ~/fe-dumbmerch && git checkout Production && docker compose up -d"
 ```
 kemudian commite changes
-![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/3faa1417-f574-4968-9b3d-6af14a9776a8)
+![Screenshot_37](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/6619df97-5a0e-4af6-af2c-c81eec9f08fc)
 kemudian jika hijau seperti ini pipelines berhasil
-![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/8f075eee-8f30-4e6a-bafb-26d64015a081)
-Repository pull berhasil di jalankan
 ![Screenshot_31](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/a2f50f78-dd3f-4b83-99ec-7d5dec3c444f)
 images berhasil di build dan push ke dockerhub
-![Screenshot_32](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f185e875-f444-4764-8f8f-912407cd92ba)
+![Screenshot_40](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/fd37907f-1556-4f25-9542-b7f68dae9a7c)
+![Screenshot_38](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/ca8bb325-42c3-4162-8e83-6a9047088f7a)
+![Screenshot_39](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1cc54f33-3a67-4c73-a05c-9696599c8bbe)
 aplikasi berhasil dijalankan
