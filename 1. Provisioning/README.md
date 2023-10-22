@@ -48,6 +48,10 @@ cd ~/.ssh
         dest: /home/wilson/.ssh
 ```
 jalankan ansible-playbook ssh.yml
+![Screenshot_19](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/079641d7-506c-4a32-b3e0-eca3f629c6da)
+```
+ansible-playbook ssh.yml
+```
 ### coba login menggunakan ssh pada vm appserver dan gateway
 ![Screenshot_23](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/864e9907-33ea-4bdf-8d29-c8aa97d0fd6f)
 ```
