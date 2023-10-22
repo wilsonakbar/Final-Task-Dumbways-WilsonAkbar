@@ -1,5 +1,10 @@
 # Server Management
 ## Server login only with SSH key
+### buat kunci baru pada server lokal
+![Screenshot_4](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1d0836bd-2acd-4658-96d9-95377b50e73a)
+```
+cd ~/.ssh
+```
 ### buat file ssh.yml pada direktori ansible
 ![Screenshot_29](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/26f88fcd-bc84-4e27-8c11-937a16c4cc4e)
 ```
