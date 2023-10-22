@@ -83,11 +83,10 @@ sudo nano .dockerignore
 ```
 docker build -t wilson/be-dumbmerch-staging:latest .
 ```
-![Screenshot_8](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/eb941996-cc1a-4c74-95f4-58d4cfd8fe71)
-![Screenshot_9](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/8569bc78-0b56-4872-aed5-fbaa07315d43)
-jangan lupa untuk upload direktori yang sudah kita ubah push ke github
-![Screenshot_10](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/fe872e95-5af9-4dd6-99bf-401705653005)
-![Screenshot_11](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/035bc67c-981f-4558-bd34-bba7f2c84cec)
+![Screenshot_34](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7b7f2584-f0ac-41d8-841c-73d769e52c40)
+```
+docker images
+```
 ### Production: Deploy a production ready app
 ![Screenshot_12](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d8739a8f-18e2-4824-bf46-a5a4e778e46d)
 ```
