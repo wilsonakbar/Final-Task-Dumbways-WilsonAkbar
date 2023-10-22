@@ -124,14 +124,15 @@ git branch
 ```
 sudo nano Dockerfile
 ```
-![Screenshot_15](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/294ae39d-ec3a-465a-9256-af709d3767fc)
+![Screenshot_15](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/4dbe2233-d3fd-43ff-b9a4-16ee760400cd)
 ```
-FROM node:16-alpine
-WORKDIR /app
-COPY . .
-RUN npm install
-EXPOSE 3000
-CMD ["npx","serve","build","-l","3000"]
+FROM golang:1.16-alpine
+RUN mkdir /app   
+COPY . /app   
+WORKDIR /app   
+RUN go get ./ && go build && go mod download
+EXPOSE 5000
+CMD ["go", "run", "main.go"]
 ```
 ![Screenshot_17](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/071fed80-2508-43eb-9ae4-f7e6f0859def)
 ```
