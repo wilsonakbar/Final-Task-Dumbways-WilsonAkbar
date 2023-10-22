@@ -1,5 +1,57 @@
 # Deployment
 ## Application
+### Create a Docker image for frontend & backend
+![Screenshot_24](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/70c1a7ca-aba9-4dc0-b391-2a27a14a9fae)
+```
+docker build -t wilson/fe-dumbmerch-staging:latest .
+```
+lakukan hal yang sama pada backend dan branch yang berbeda dengan total 4 images
+![Screenshot_33](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/65ad7d1a-ff94-4f9b-bd95-364f11c3fc24)
+```
+docker images
+```
+### App database using *PostgreSQL*
+buat docker compos dengan db postgres
+![Screenshot_28](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/066137e6-72e4-4b9f-bac7-f679e6ccf447)
+```
+version: "3.8"
+services:
+   db:
+    image: postgres:latest
+    container_name: db_dumbmerch
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=wilson
+      - POSTGRES_PASSWORD=wilson
+      - POSTGRES_DB=db_dumbmerch
+   frontend:
+    image: wilsonakbar/fe-dumbmerch-production:latest
+    container_name: fe-dumbmerch
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+   backend:
+    depends_on:
+      - db
+    image: wilsonakbar/be-dumbmerch-production:latest
+    container_name: be-dumbmerch
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+```
+![Screenshot_26](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/e72c56e5-cdd5-42a1-ac39-b54c79f42f78)
+```
+docker compose up -d
+```
+![Screenshot_27](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/532037c8-0d64-4a0c-a112-7e4e167202f0)
+```
+docker ps -a
+```
 ### Staging: A lightweight docker image (as small as possible)
 cek branch Staging pada fe-dumbmerch
 ![Screenshot_1](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/cdc23162-2488-4dd9-96a8-9a4e3a2a0dbe)
@@ -89,57 +141,7 @@ docker build -t wilsonakbar/be-dumbmerch-production:latest .
 jangan lupa untuk upload direktori yang sudah kita ubah push ke github
 ![Screenshot_20](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d9dbedd4-18ab-4e39-a0b1-4eb9a0ba8af9)
 ![Screenshot_21](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1fa574d6-95b6-4d86-b894-5c95a8c160e3)
-### Create a Docker image for frontend & backend
-![Screenshot_24](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/70c1a7ca-aba9-4dc0-b391-2a27a14a9fae)
-```
-docker build -t wilson/fe-dumbmerch-staging:latest .
-```
-![Screenshot_25](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f408954b-5871-4f3d-96d1-6de6a7e0bb7c)
-```
-docker images
-```
-### App database using *PostgreSQL*
-buat docker compos dengan db postgres
-![Screenshot_28](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/066137e6-72e4-4b9f-bac7-f679e6ccf447)
-```
-version: "3.8"
-services:
-   db:
-    image: postgres:latest
-    container_name: db_dumbmerch
-    ports:
-      - 5432:5432
-    volumes:
-      - ~/postgresql:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=wilson
-      - POSTGRES_PASSWORD=wilson
-      - POSTGRES_DB=db_dumbmerch
-   frontend:
-    image: wilsonakbar/fe-dumbmerch-production:latest
-    container_name: fe-dumbmerch
-    stdin_open: true
-    restart: unless-stopped
-    ports:
-      - 3000:3000
-   backend:
-    depends_on:
-      - db
-    image: wilsonakbar/be-dumbmerch-production:latest
-    container_name: be-dumbmerch
-    stdin_open: true
-    restart: unless-stopped
-    ports:
-      - 5000:5000
-```
-![Screenshot_26](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/e72c56e5-cdd5-42a1-ac39-b54c79f42f78)
-```
-docker compose up -d
-```
-![Screenshot_27](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/532037c8-0d64-4a0c-a112-7e4e167202f0)
-```
-docker ps -a
-```
+
 ## CI/CD
 ### Using GitlabCI, create a pipeline running
 buat repository fe dan be pada gitlab
