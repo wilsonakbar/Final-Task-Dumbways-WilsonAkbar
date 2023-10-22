@@ -138,12 +138,10 @@ CMD ["go", "run", "main.go"]
 ```
 docker build -t wilsonakbar/be-dumbmerch-production:latest .
 ```
-![Screenshot_18](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/edc6bd1d-4a34-4fce-9882-51c10df0fd1a)
-![Screenshot_19](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/5e6d71a2-e6f1-4538-8d60-0012c1441313)
-jangan lupa untuk upload direktori yang sudah kita ubah push ke github
-![Screenshot_20](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d9dbedd4-18ab-4e39-a0b1-4eb9a0ba8af9)
-![Screenshot_21](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1fa574d6-95b6-4d86-b894-5c95a8c160e3)
-
+![Screenshot_34](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/a2c93b11-fa82-4989-8e7f-29a70eea61eb)
+```
+docker images
+```
 ## CI/CD
 ### Using GitlabCI, create a pipeline running
 buat repository fe dan be pada gitlab
