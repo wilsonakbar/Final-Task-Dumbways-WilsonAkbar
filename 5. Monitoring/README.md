@@ -58,7 +58,58 @@ https://grafana.com/grafana/dashboards/ nah sini kita bisa download template ses
 ![Screenshot_12](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/da46000c-4b75-4104-8d07-342f3aacd15b)
 kemudian hubungkan template tadi dengan data sources prometheus yang sudah buat
 ![Screenshot_13](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/b1409319-84a3-4c36-a12a-04b31a164236)
-
+dan ini adalah tampilan grafana Dashboard yang sudah di setting menggunakan Template
 ![Screenshot_14](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/75b81c38-8040-4b12-a3ad-ecc7330f6a37)
+## Grafana Alert/Prometheus Alertmanager
+pada bagian menu alerting kita setting contact point
+![Screenshot_15](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/88b468a5-ae81-447a-9f26-57d3f3cf1fa6)
+kemudian pada BOT API token dari untuk membuat bot dan akan mendapatkan token https://t.me/BotFather
+![Screenshot_16](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/38dec0d4-c3a2-4256-9c47-5655d620d47c)
+start Chat ID didapat dari https://t.me/get_id_bot
+![Screenshot_17](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/00267c5a-953b-443a-941a-3693a66562b1)
+kemudian kita masukan data token dan id chat kita dan integration pada telegram
+![Screenshot_18](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/586617f1-bf4c-49e0-8341-69235271ddbd)
+kemudian kita test alert nya, sebelum itu jangan lupa kita jalankan bot yang baru saja kita buat https://t.me/finaltestwilsonbot
+![Screenshot_19](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/3b47be4e-4949-4e18-8ee6-e93f53bc7492)
+### alart rules - CPU Usage, RAM Usage & Free Storage
+pada bagian alert rules kita buat new rules
+![Screenshot_20](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1dab6b3a-77fe-43d1-b232-75d741e98f26)
+kita masukan nama rules, kemudian ini metrics queries nya
+![Screenshot_21](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/fef1dffe-d9ea-4ca5-b4ae-14d21db8cf0b)
+```
+100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle", job="grafana"}[5m])) * 100)
+```
+![Screenshot_22](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f32f2e55-a6bc-45a5-bb0e-86e3cf8b4569)
+scroll pada bagian bawah, threshold kita sesuaikan alfabet input nya, alert nya di isi pada IS ABOVE, dan jangan lupa folder serta group nya, lalukan hal yang sama saat setting ram dan storage yang berbeda hanya metrics queries nya
+![Screenshot_23](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/dea60d62-5381-4258-9221-20ecb92a94f3)
+```
+100 * (1 - ((avg_over_time(node_memory_MemFree_bytes{}[10m]) + avg_over_time(node_memory_Cached_bytes{}[10m]) + avg_over_time(node_memory_Buffers_bytes{}[10m])) / avg_over_time(node_memory_MemTotal_bytes{}[10m])))
+```
+![Screenshot_24](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/bec86857-393d-471a-a2ba-66570e427f5d)
+```
+100 - ((node_filesystem_avail_bytes{instance="103.127.97.68:9100",job="grafana",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance="103.127.97.68:9100",job="grafana",device!~'rootfs'})
+```
+![Screenshot_26](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/0ad0d6c7-25d8-4b1d-b1ff-8ce735f6170d)
+pada notification policies, kita pilih default nya menjadi telegram kemudian update
+![Screenshot_25](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/0d834078-757c-4dd9-8373-c265643f82a2)
+contoh alert RAM
+![Screenshot_27](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/e89bce72-2c50-48a1-bc88-c6977f49fc74)
+contoh alert CPU
+![Screenshot_28](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f8376523-1955-4d10-a3e1-3e617d1f06e3)
+contoh alert Storage
+![Screenshot_29](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/23352a9c-f798-4fd5-9f7b-9c3498a9232b)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
