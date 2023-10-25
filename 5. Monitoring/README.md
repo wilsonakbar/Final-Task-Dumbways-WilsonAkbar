@@ -81,6 +81,7 @@ kita masukan nama rules, kemudian ini metrics queries nya
 ```
 ![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/37021dc0-cde1-4d93-b99d-d2b008332092)
 scroll pada bagian bawah, threshold kita sesuaikan alfabet input nya, alert nya di isi pada IS ABOVE, dan jangan lupa folder serta group nya, lalukan hal yang sama saat setting ram dan storage yang berbeda hanya metrics queries nya
+
 ```
 100 * (1 - ((avg_over_time(node_memory_MemFree_bytes{}[10m]) + avg_over_time(node_memory_Cached_bytes{}[10m]) + avg_over_time(node_memory_Buffers_bytes{}[10m])) / avg_over_time(node_memory_MemTotal_bytes{}[10m])))
 ```
