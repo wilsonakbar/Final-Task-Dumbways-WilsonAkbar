@@ -11,7 +11,6 @@ multipass shell wilson
 ### install Ansible pada server lokal
 https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-ubuntu
 ![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/172e3a30-45da-424f-be10-29346d0d83f8)
-
 ```
 ansible --version
 ```
@@ -23,12 +22,12 @@ terraform --version
 ```
 ## Attach SSH keys & IP configuration to all VMs
 ### buat kunci baru pada server lokal
-![Screenshot_4](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1d0836bd-2acd-4658-96d9-95377b50e73a)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/59191ebc-7749-4a9f-be7f-a3d36ddf3e41)
 ```
 cd ~/.ssh
 ```
 ### buat file ssh.yml pada direktori ansible
-![Screenshot_29](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/26f88fcd-bc84-4e27-8c11-937a16c4cc4e)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/40b9a940-833d-4460-a82d-da746d7a8d34)
 ```
 ---
 - become: true
@@ -49,23 +48,23 @@ cd ~/.ssh
         dest: /home/wilson/.ssh
 ```
 jalankan ansible-playbook ssh.yml
-![Screenshot_19](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/079641d7-506c-4a32-b3e0-eca3f629c6da)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7ac26287-6998-4382-95fa-52433fc09da5)
 ```
 ansible-playbook ssh.yml
 ```
 ### coba login menggunakan ssh pada vm appserver dan gateway
-![Screenshot_23](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/864e9907-33ea-4bdf-8d29-c8aa97d0fd6f)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/8f9fe89d-a90c-4662-a93e-339297ff6770)
 ```
 ssh appserver
 ```
-![Screenshot_24](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/5a44f6e8-2beb-4223-b90b-bcbae4f312eb)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/16861114-8427-4ad0-a65f-e7d28bdb07ae)
 ```
 ssh gateway
 ```
 ## Server Configuration using Ansible
 buat direktori ansible kemudian buat file  
 Inventory
-![Screenshot_8](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1b1ce62c-6d10-4d08-910f-23fbf87fcc91)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/b5a61fce-a826-4cff-a101-d9437fd1d911)
 ```
 [appserver]
 103.127.97.68
@@ -78,7 +77,7 @@ ansible_user="wilson"
 ansible_pythone_interpreter=/usr/bin/python3
 ```
 ansible.cfg  
-![Screenshot_9](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/3c08aac3-e49d-472d-b8ea-f4cf615d9553)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/8ed9b943-0bf1-4f01-94cd-d9c0053a3c2f)
 ```
 [defaults]
 inventory = Inventory
@@ -88,7 +87,7 @@ interpreter_python = auto_silent
 ```
 ### Docker Engine
 buat file install-docker.yml
-![Screenshot_10](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/5d81e0fc-02ce-470e-8f39-83639e005615)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/55e0c4e8-d77b-4ceb-ac01-2dedbe95e3e6)
 ```
 ---
 - become: true
@@ -133,13 +132,13 @@ buat file install-docker.yml
         append: yes
 ```
 jalankan file docker
-![Screenshot_11](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/4cf4874b-3bbd-4799-aff8-afd274c34196)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/b0adadf8-f1e1-42f4-98da-0bd2e43955e4)
 ```
 ansible-playbook install-docker.yml
 ```
 ### Node Exporter
 buat file install_node_exporter.yml
-![Screenshot_12](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/75c37a78-63d4-45b8-865d-9c85986be66d)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/943fdcc5-5cc5-4a6e-9f20-b77b545ecbbe)
 ```
 - name: Deploy Node Exporter with Docker
   hosts: all
@@ -160,14 +159,14 @@ buat file install_node_exporter.yml
           - "9100:9100"
 ```
 jalankan file node exporter
-![Screenshot_13](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/ed5098bb-81d6-4e54-8f2b-8dff0fd03ad8)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/c36e8c39-089a-4657-b81d-34693f0c1ca9)
 ```
 ansible-playbook install_node_exporter.yml
 ```
 ### Appserver
 ## git repo (dumbmerch)
 buat file repo_dumbmerch.yml
-![Screenshot_14](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/cd6e0f28-169b-4378-bb86-5f7f522a3a28)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/24ceebae-d15a-47da-9127-be63a658b5a4)
 ```
 ---
 - become: true
@@ -183,13 +182,13 @@ buat file repo_dumbmerch.yml
         repo: https://github.com/demo-dumbways/be-dumbmerch
         dest: /home/wilson/be-dumbmerch
 ```
-![Screenshot_15](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/120ede11-d634-4e6f-bb3a-40d7558d5305)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d748d805-d2fe-4c35-9a6a-b380dee84507)
 ```
 ansible-playbook repo_dumbmerch.yml
 ```
 ## Prometheus 
 buat file install_prometheus.yml
-![Screenshot_25](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7141d755-7f4c-4ea7-a799-4463f75e86ae)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/6397ec69-5b15-4562-818a-8acaac558294)
 ```
 ---
 - become: true
@@ -211,12 +210,12 @@ buat file install_prometheus.yml
         volumes:
           - /home/wilson/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 ```
-![Screenshot_18](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/5c8986d9-a3e8-48c2-9c70-804da0d718ef)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/87f8ebc5-75bd-41ca-ba5e-128804ded749)
 ```
 ansible-playbook install_prometheus.yml
 ```
 ## Grafana
-![Screenshot_26](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/3b0f994f-d5f0-47cb-ae5b-174f96c8afc6)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/91132b0f-9e2a-4250-9a63-ea55ad256195)
 buat file install_grafana.yml
 ```
 ---
@@ -240,14 +239,14 @@ buat file install_grafana.yml
           - ~/grafana:/var/lib/grafana
         user: root
 ```
-![Screenshot_19](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/2d46b5d7-6bfd-428e-806e-321e1c31fcee)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/a73ea785-02ca-456d-8d9f-bd92398e4160)
 ```
 ansible-playbook install_grafana.yml
 ```
 ### Gateway
 ## Reverse Proxy
 buat file proxy.conf
-![Screenshot_28](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/c17869e3-d914-4d82-ab38-f9aec94d1ecf)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/27641851-0d67-41e0-b590-90d6bc17e49a)
 ```
 server {
     server_name prom.wilson.studentdumbways.my.id;
@@ -294,8 +293,7 @@ server {
 ```
 ## NGINX
 buat file nginx.yml
-![Screenshot_27](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/5b167ebe-04a7-4980-b4fd-31002d217984)
-
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/72e29e02-f9f1-4017-8af7-4b947b7c6287)
 ```
 ---
 - become: true
@@ -320,7 +318,7 @@ buat file nginx.yml
         name: nginx
         state: reloaded
 ```
-![Screenshot_22](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d05513c2-c54d-44f5-8fed-1ed941f9025e)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f871086c-25fd-43a7-b038-3e37c661e25f)
 ```
 ansible-playbook nginx.yml
 ```
