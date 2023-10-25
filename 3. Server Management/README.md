@@ -1,12 +1,12 @@
 # Server Management
 ## Server login only with SSH key
 ### buat kunci baru pada server lokal
-![Screenshot_4](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1d0836bd-2acd-4658-96d9-95377b50e73a)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/62ad3669-6153-465b-aee1-183df5aefbf0)
 ```
 cd ~/.ssh
 ```
 ### buat file ssh.yml pada direktori ansible
-![Screenshot_29](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/26f88fcd-bc84-4e27-8c11-937a16c4cc4e)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/0600b7bd-5d86-4089-8098-ba38e000b104)
 ```
 ---
 - become: true
@@ -27,23 +27,23 @@ cd ~/.ssh
         dest: /home/wilson/.ssh
 ```
 jalankan ansible-playbook ssh.yml
-![Screenshot_19](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/079641d7-506c-4a32-b3e0-eca3f629c6da)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/4477e468-df94-4cd5-86f3-d7afa76a84ce)
 ```
 ansible-playbook ssh.yml
 ```
 ### Password login disabled
 masuk ke file sshd config lalu edit menjadi no / tidak
-![Screenshot_18](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/09ce51e6-620e-4a4d-9c89-ec4a4ff61b01)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/068531bf-49f9-45b6-911b-082b26a5885f)
 ```
 sudo nano /etc/ssh/sshd_config
 ```
-![Screenshot_17](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/09f94fa2-d329-429f-96b7-67c44c04e892)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d01f6d4a-cb57-474c-8d71-e837d504ce3b)
 ```
 PasswordAuthentication no
 ```
 ## Create a working **SSH config** to log into servers
 ### buat file config pada ssh server local
-![Screenshot_5](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/569b4682-7f13-4fa7-b72e-bb27dac24750)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/a88f813c-3a04-476c-9ead-1b7b24afc13c)
 ```
 host gateway
     HostName 103.127.97.70
@@ -54,11 +54,11 @@ host appserver
     User wilson
 ```
 lalu coba login menggunakan SSH
-![Screenshot_23](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/864e9907-33ea-4bdf-8d29-c8aa97d0fd6f)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/c29d54ec-5cbc-4d45-8286-4852268eff96)
 ```
 ssh appserver
 ```
-![Screenshot_24](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/5a44f6e8-2beb-4223-b90b-bcbae4f312eb)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/ab69a750-b264-41f2-a79d-7fd75dacb210)
 ```
 ssh gateway
 ```
@@ -66,7 +66,7 @@ ssh gateway
 ### salin file key id_rsa.pub ke authorized_keys pada local server ke appserver dan gateway
 ![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f21a034c-ebf5-43be-854d-b4698cbc9bfd)
 buat file ssh.yml pada ansible
-![Screenshot_7](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/c3c1acdb-de58-4bfd-9e78-bdbc0811564d)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/5ff54091-6523-4569-a6cb-6020a9179fd3)
 ```
 ---
 - become: true
@@ -86,13 +86,13 @@ buat file ssh.yml pada ansible
         src: ~/.ssh/authorized_keys
         dest: /home/wilson/.ssh
 ```
-![Screenshot_8](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/51d57403-5745-47c0-98a0-9cbd8414d3ac)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/c8b82c80-61d6-4c3e-b16e-94b0f6339351)
 ```
 ansible-playbook ssh.yml
 ```
 ## UFW enabled with only used ports allowed
 ### buat file  firewall pada ansible
-![Screenshot_11](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/9214542f-f0ed-46f0-ae75-7e931a87a75c)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/33955e56-f057-4990-b990-5cf60ead09db)
 ```
 ---
 - become: true
@@ -130,7 +130,7 @@ ansible-playbook ssh.yml
         policy: allow
 ```
 lalu jalankan firewall.yml
-![Screenshot_10](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/487cd1f7-22b2-4b0a-a6f4-62a40799ec95)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/ccc045dc-1d01-483e-9952-31e4306b598d)
 ```
 ansible-playbook firewall.yml
 ```
