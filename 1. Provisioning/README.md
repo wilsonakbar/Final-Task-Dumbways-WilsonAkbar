@@ -1,7 +1,7 @@
 # Provisioning
 ## Local
 ### buat server lokal multipass pada windows
-![Screenshot_1](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/8fc3c2a1-20a3-4400-916d-797af13c1b4a)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/64fde52b-f5b1-49ff-8000-e25c4c779af5)
 ```
 multipass launch --name wilson 20.04
 ```
@@ -10,13 +10,14 @@ multipass shell wilson
 ```
 ### install Ansible pada server lokal
 https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-ubuntu
-![Screenshot_2](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/51474922-4969-4f88-a472-79b53c6e1243)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/172e3a30-45da-424f-be10-29346d0d83f8)
+
 ```
 ansible --version
 ```
 ### install Terraform pada server lokal
 https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli
-![Screenshot_3](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/6921c619-5bc0-48bc-be36-ccd0d3442961)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/baeb7152-c00c-4993-80c6-b0d495d7e107)
 ```
 terraform --version
 ```
