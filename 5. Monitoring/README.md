@@ -81,14 +81,20 @@ kita masukan nama rules, kemudian ini metrics queries nya
 ```
 ![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/37021dc0-cde1-4d93-b99d-d2b008332092)
 scroll pada bagian bawah, threshold kita sesuaikan alfabet input nya, alert nya di isi pada IS ABOVE, dan jangan lupa folder serta group nya, lalukan hal yang sama saat setting ram dan storage yang berbeda hanya metrics queries nya
-
+![Screenshot_23](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/19c910a2-2f07-4783-8e10-80ddf3ed02de)
 ```
 100 * (1 - ((avg_over_time(node_memory_MemFree_bytes{}[10m]) + avg_over_time(node_memory_Cached_bytes{}[10m]) + avg_over_time(node_memory_Buffers_bytes{}[10m])) / avg_over_time(node_memory_MemTotal_bytes{}[10m])))
 ```
+![Screenshot_24](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f20c7199-a492-4cbb-8f90-c0e4f9daf03d)
 ```
 100 - ((node_filesystem_avail_bytes{instance="103.127.97.68:9100",job="grafana",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance="103.127.97.68:9100",job="grafana",device!~'rootfs'})
 ```
+![Screenshot_26](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1d3cf1e5-91ef-4a65-8b4e-8a5859934bab)
 pada notification policies, kita pilih default nya menjadi telegram kemudian update
+![Screenshot_25](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7fa660d6-b587-4083-b324-aa6743723bcf)
 contoh alert RAM
+![Screenshot_27](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/16ed3b7e-e3ed-401d-9500-9765e4b8c128)
 contoh alert CPU
+![Screenshot_28](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d3ae9280-6498-4a9a-98f7-79a935734594)
 contoh alert Storage
+![Screenshot_29](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7bb4c107-d576-4382-b918-da75428126a9)
