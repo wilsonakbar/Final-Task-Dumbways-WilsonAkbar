@@ -81,20 +81,20 @@ kita masukan nama rules, kemudian ini metrics queries nya
 ```
 ![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/37021dc0-cde1-4d93-b99d-d2b008332092)
 scroll pada bagian bawah, threshold kita sesuaikan alfabet input nya, alert nya di isi pada IS ABOVE, dan jangan lupa folder serta group nya, lalukan hal yang sama saat setting ram dan storage yang berbeda hanya metrics queries nya
-![Screenshot_23](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/19c910a2-2f07-4783-8e10-80ddf3ed02de)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/33c815c3-15de-415c-be4f-c6eb0843bf3d)
 ```
 100 * (1 - ((avg_over_time(node_memory_MemFree_bytes{}[10m]) + avg_over_time(node_memory_Cached_bytes{}[10m]) + avg_over_time(node_memory_Buffers_bytes{}[10m])) / avg_over_time(node_memory_MemTotal_bytes{}[10m])))
 ```
-![Screenshot_24](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/f20c7199-a492-4cbb-8f90-c0e4f9daf03d)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7a4ccb8e-b460-4cb7-8fcc-d80500686f10)
 ```
 100 - ((node_filesystem_avail_bytes{instance="103.127.97.68:9100",job="grafana",device!~'rootfs'} * 100) / node_filesystem_size_bytes{instance="103.127.97.68:9100",job="grafana",device!~'rootfs'})
 ```
-![Screenshot_26](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/1d3cf1e5-91ef-4a65-8b4e-8a5859934bab)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/061cbee0-0315-4ab0-b502-47c36d2a5821)
 pada notification policies, kita pilih default nya menjadi telegram kemudian update
-![Screenshot_25](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7fa660d6-b587-4083-b324-aa6743723bcf)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/5496e34e-4337-4e35-8866-4646bf75f4cb)
 contoh alert RAM
-![Screenshot_27](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/16ed3b7e-e3ed-401d-9500-9765e4b8c128)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/3ae1786a-9303-4933-8862-d974f36c4916)
 contoh alert CPU
-![Screenshot_28](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/d3ae9280-6498-4a9a-98f7-79a935734594)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/56710ef2-eaa9-4d8c-b652-1135e72e2c6f)
 contoh alert Storage
-![Screenshot_29](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/7bb4c107-d576-4382-b918-da75428126a9)
+![image](https://github.com/wilsonakbar/Final-Task-Dumbways-WilsonAkbar/assets/132327628/0dbf2547-a2a8-4fb4-9f58-74c5f0f8bcca)
